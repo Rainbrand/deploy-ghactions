@@ -1,12 +1,13 @@
 {
   "private": true,
   "scripts": {
-    "start": "browser-sync start --server src --no-notify --no-ui --cwd src --files index.html,styles/**/*",
+    "start": "browser-sync start --server flex/src --no-notify --no-ui --cwd src --files index.html,styles/**/*",
     "test": "editorconfig-checker",
-    "html": "html-minifier --remove-comments --collapse-whitespace --input-dir src --output-dir dist --file-ext html",
-    "styles": "postcss src/styles/index.css --use postcss-import --use postcss-csso --no-map --output dist/styles/index.css",
+    "html": "html-minifier --remove-comments --collapse-whitespace --input-dir flex/src --output-dir dist --file-ext html",
+    "styles": "postcss flex/src/styles/index.css --use postcss-import --use postcss-csso --no-map --output dist/styles/index.css",
     "build": "npm run html && npm run styles",
-    "serve": "serve"
+    "serve": "serve",
+    "checkvalidate": "editorconfig-checker && node-w3c-validator -i flex/src/*.html -f html -o ./reports/result.html -s"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",

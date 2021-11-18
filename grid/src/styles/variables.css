@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+
+:root {
+    --beige: #eeeceb;
+    --headerFont: Roboto Slab, sans-serif;
+    --font: Roboto, sans-serif;
+    --containerMargin: 0 102px;
+}

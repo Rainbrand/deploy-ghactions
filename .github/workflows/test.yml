@@ -1,3 +1,4 @@
+# -- editorconfig-checker-disable-file
 name: Test
 
 on:
@@ -19,3 +20,19 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm test
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+        java: [11]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - uses: actions/setup-java@v2.3.1
+        with:
+          node-version: ${{ matrix.node-version }}
+          java: ${{ matrix.java }}
+      - run: npm ci
+      - run: npm checkvalidate
+
