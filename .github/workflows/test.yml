@@ -30,11 +30,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
       - uses: actions/setup-java@v2.3.1
         with:
           distribution: 'temurin'
           java-version: ${{ matrix.java-version }}
-          node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm checkvalidate
 
