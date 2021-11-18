@@ -39,4 +39,3 @@ jobs:
       - run: npm i -G node-w3c-validator
       - run: npm ci
       - run: npm run checkvalidate
-
