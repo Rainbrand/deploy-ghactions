@@ -37,5 +37,5 @@ jobs:
           distribution: 'temurin'
           java-version: ${{ matrix.java-version }}
       - run: npm ci
-      - run: npm checkvalidate
+      - run: npm run checkvalidate
 
